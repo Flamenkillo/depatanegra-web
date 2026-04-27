@@ -26,7 +26,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── HERO DESKTOP ─── vídeo de fondo ──────────────── */
+/* ── HERO DESKTOP: vídeo a pantalla completa ──────── */
 .hero {
   position: relative;
   width: 100%;
@@ -58,8 +58,8 @@ body {
     to bottom,
     rgba(0,0,0,0.3) 0%,
     rgba(0,0,0,0.1) 35%,
-    rgba(0,0,0,0.45) 70%,
-    rgba(0,0,0,0.95) 100%
+    rgba(0,0,0,0.55) 70%,
+    rgba(0,0,0,0.96) 100%
   );
   z-index: 1;
 }
@@ -73,7 +73,7 @@ body {
   padding: 0 24px;
 }
 
-/* ── HERO MÓVIL ─── vídeo arriba, texto abajo ─────── */
+/* ── HERO MÓVIL: vídeo 16:9 arriba, texto abajo ──── */
 .hero-mobile {
   display: none;
   flex-direction: column;
@@ -172,7 +172,9 @@ body {
 
 /* BOTÓN */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 15px 42px;
   border: 1px solid var(--naranja);
   color: var(--naranja);
@@ -183,8 +185,6 @@ body {
   text-decoration: none;
   transition: background 0.3s, color 0.3s;
   min-height: 52px;
-  display: inline-flex;
-  align-items: center;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -229,7 +229,7 @@ p {
 
 .raya { width: 44px; height: 1px; background: var(--naranja); margin: 28px 0; }
 
-/* EL ESPECTÁCULO */
+/* ESPECTÁCULO */
 .espectaculo { background: var(--gris-oscuro); }
 
 .esp-grid {
@@ -259,9 +259,7 @@ p {
 .foto-wide { grid-column: span 2; }
 .foto-tall { grid-column: span 1; }
 
-.fotos-masonry .foto-item {
-  overflow: hidden;
-}
+.fotos-masonry .foto-item { overflow: hidden; }
 
 .fotos-masonry .foto-item img {
   width: 100%;
@@ -292,32 +290,6 @@ p {
   top: 0; left: 0;
   width: 100%; height: 100%;
   border: 0;
-}
-
-/* NOTA DE INTENCIÓN */
-.intencion { background: var(--gris-medio); position: relative; overflow: hidden; }
-
-.intencion::before {
-  content: '"';
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 360px;
-  color: rgba(200,98,42,0.055);
-  position: absolute;
-  top: -50px; left: -8px;
-  line-height: 1;
-  pointer-events: none;
-}
-
-.frase {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(20px, 2.7vw, 33px);
-  font-style: italic;
-  font-weight: 300;
-  line-height: 1.68;
-  color: var(--crema);
-  max-width: 760px;
-  position: relative;
-  z-index: 1;
 }
 
 /* FICHA TÉCNICA */
@@ -474,7 +446,7 @@ footer {
   </div>
 </div>
 
-<!-- EL ESPECTÁCULO -->
+<!-- ESPECTÁCULO -->
 <section class="espectaculo" id="espectaculo">
   <div class="container">
     <div class="esp-grid rv">
@@ -487,7 +459,7 @@ footer {
         <p>En 2026 presentamos <em>Rosa Temprana</em>, un espectáculo propio pensado para teatro, con mayor elaboración artística y vocación de continuidad en los circuitos culturales y teatrales. Una formación de doce músicos y cantaores.</p>
         <p>Tradición flamenca navideña para el escenario.</p>
       </div>
-      <img src="cantaoras 1.png" alt="De Pata Negra en escena" class="esp-img">
+      <img src="añadir.2.png" alt="De Pata Negra en escena" class="esp-img">
     </div>
   </div>
 </section>
@@ -502,19 +474,19 @@ footer {
       <img src="Manuel y Paco.png" alt="Manuel y Paco" style="object-position: top;">
     </div>
     <div class="foto-item foto-tall">
-      <img src="guitarrista.png" alt="Guitarra flamenca">
+      <img src="Guitarrista.png" alt="Guitarra flamenca">
     </div>
     <div class="foto-item foto-tall">
-      <img src="cantaoras 1.png" alt="Cantaoras">
+      <img src="Cantaoras 1.png" alt="Cantaoras">
     </div>
     <div class="foto-item foto-tall">
-      <img src="cantaoras 2.png" alt="Voces flamencas">
+      <img src="Cantaoras 2.png" alt="Voces flamencas">
     </div>
     <div class="foto-item foto-wide">
       <img src="principal.png" alt="De Pata Negra — grupo completo">
     </div>
     <div class="foto-item foto-tall">
-      <img src="bajo.png" alt="Bajo eléctrico">
+      <img src="Bajo.png" alt="Bajo eléctrico">
     </div>
   </div>
 </div>
@@ -534,7 +506,6 @@ footer {
     </div>
   </div>
 </section>
-
 
 <!-- FICHA TÉCNICA -->
 <section class="ficha">
