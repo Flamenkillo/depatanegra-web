@@ -92,7 +92,7 @@ body {
 .hero-mobile-texto {
   background: var(--negro);
   text-align: center;
-  padding: 32px 24px 48px;
+  padding: 16px 20px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -220,7 +220,7 @@ h2 {
 h2 em { font-style: italic; color: #E8845A; }
 
 p {
-  font-size: clamp(13.5px, 1.3vw, 15px);
+  font-size: clamp(15px, 1.5vw, 18px);
   line-height: 1.92;
   color: var(--texto);
   margin-bottom: 16px;
@@ -248,28 +248,33 @@ p {
 }
 
 /* GALERÍA */
-.fotos { background: var(--negro); padding: 0; }
+.fotos { background: var(--negro); padding: 48px 0; }
 
 .fotos-masonry {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.foto-wide { grid-column: span 2; }
-.foto-tall { grid-column: span 1; }
+.foto-full { grid-column: span 2; }
+.foto-half { grid-column: span 1; }
 
 .fotos-masonry .foto-item { overflow: hidden; }
 
 .fotos-masonry .foto-item img {
   width: 100%;
-  height: 320px;
+  height: 400px;
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
   display: block;
   filter: brightness(0.84);
   transition: filter 0.4s;
 }
+
+.fotos-masonry .foto-item.foto-full img { height: 480px; }
 
 .fotos-masonry .foto-item img:hover { filter: brightness(1.0); }
 
@@ -395,12 +400,15 @@ footer {
 
 @media (max-width: 900px) {
   .esp-grid { grid-template-columns: 1fr; gap: 32px; }
-  .fotos-masonry { grid-template-columns: repeat(2, 1fr); }
-  .foto-wide { grid-column: span 2; }
-  .foto-tall { grid-column: span 1; }
+  .fotos-masonry { grid-template-columns: 1fr; gap: 8px; }
+  .foto-full, .foto-half { grid-column: span 1; }
+  .fotos-masonry .foto-item img { height: 260px; }
+  .fotos-masonry .foto-item.foto-full img { height: 260px; }
   .ficha-cuadricula { grid-template-columns: 1fr 1fr; }
   .container { padding: 0 22px; }
   section { padding: 60px 0; }
+  .portada-titulo { font-size: clamp(48px, 13vw, 80px); padding-top: 0; }
+  .portada-subtitulo { font-size: clamp(30px, 8vw, 52px); }
 }
 
 @media (max-width: 479px) {
@@ -467,25 +475,22 @@ footer {
 <!-- GALERÍA -->
 <div class="fotos rv">
   <div class="fotos-masonry">
-    <div class="foto-item foto-wide">
-      <img src="añadir.2.png" alt="De Pata Negra en escena">
+    <!-- Fila 1: principal a todo ancho -->
+    <div class="foto-item foto-full">
+      <img src="principal.png" alt="De Pata Negra — grupo completo" style="object-position: center top;">
     </div>
-    <div class="foto-item foto-tall">
-      <img src="Manuel y Paco.png" alt="Manuel y Paco" style="object-position: top;">
-    </div>
-    <div class="foto-item foto-tall">
+    <!-- Fila 2: guitarrista + cantaoras 2 -->
+    <div class="foto-item foto-half">
       <img src="Guitarrista.png" alt="Guitarra flamenca">
     </div>
-    <div class="foto-item foto-tall">
-      <img src="Cantaoras 1.png" alt="Cantaoras">
-    </div>
-    <div class="foto-item foto-tall">
+    <div class="foto-item foto-half">
       <img src="Cantaoras 2.png" alt="Voces flamencas">
     </div>
-    <div class="foto-item foto-wide">
-      <img src="principal.png" alt="De Pata Negra — grupo completo">
+    <!-- Fila 3: Manuel y Paco + bajo -->
+    <div class="foto-item foto-half">
+      <img src="Manuel y Paco.png" alt="Manuel y Paco" style="object-position: center top;">
     </div>
-    <div class="foto-item foto-tall">
+    <div class="foto-item foto-half">
       <img src="Bajo.png" alt="Bajo eléctrico">
     </div>
   </div>
