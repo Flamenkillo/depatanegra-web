@@ -230,7 +230,7 @@ p {
 .raya { width: 44px; height: 1px; background: var(--naranja); margin: 28px 0; }
 
 /* ESPECTÁCULO */
-.espectaculo { background: var(--gris-oscuro); }
+.espectaculo { background: var(--gris-oscuro); padding-top: 20px; }
 
 .esp-grid {
   display: grid;
@@ -298,7 +298,7 @@ p {
 }
 
 /* FICHA TÉCNICA */
-.ficha { background: var(--negro); }
+.ficha { background: var(--negro); padding-top: 20px; }
 
 .ficha-cuadricula {
   display: grid;
@@ -407,8 +407,10 @@ footer {
   .ficha-cuadricula { grid-template-columns: 1fr 1fr; }
   .container { padding: 0 22px; }
   section { padding: 60px 0; }
-  .portada-titulo { font-size: clamp(48px, 13vw, 80px); padding-top: 0; }
-  .portada-subtitulo { font-size: clamp(30px, 8vw, 52px); }
+  .portada-titulo { font-size: clamp(56px, 16vw, 96px); padding-top: 0; }
+  .portada-subtitulo { font-size: clamp(36px, 10vw, 60px); }
+  .portada-datos { font-size: clamp(13px, 3.5vw, 18px); }
+  .btn { font-size: 12px; min-height: 52px; padding: 14px 32px; }
 }
 
 @media (max-width: 479px) {
@@ -503,7 +505,6 @@ footer {
 <!-- VIDEOCLIP -->
 <section class="video">
   <div class="container rv">
-    <span class="etiqueta">Videoclip oficial</span>
     <h2><em>Rosa Temprana</em></h2>
     <div class="video-wrap">
       <iframe
